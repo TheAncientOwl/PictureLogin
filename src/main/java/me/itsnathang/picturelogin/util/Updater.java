@@ -12,7 +12,7 @@ import static me.itsnathang.picturelogin.util.Translate.tl;
 
 public class Updater {
 
-     public Updater(Logger log, String currentVersion) {
+    public Updater(Logger log, String currentVersion) {
         final String USER_AGENT = "PictureLogin Plugin";
         final String PLUGIN_ID = "4514";
 
@@ -22,7 +22,8 @@ public class Updater {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.addRequestProperty("User-Agent", USER_AGENT);// Set User-Agent
             // Read downloaded file
-            JsonObject jsonObject = new JsonParser().parse(new InputStreamReader(connection.getInputStream())).getAsJsonObject();
+            JsonObject jsonObject = JsonParser.parseReader(new InputStreamReader(connection.getInputStream()))
+                    .getAsJsonObject();
 
             String latest_version = jsonObject.get("name").toString().replace("\"", "");
 
