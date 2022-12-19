@@ -9,10 +9,10 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import me.defaultybuf.picturelogin.utils.Chat;
 import me.itsnathang.picturelogin.PictureLogin;
 import me.itsnathang.picturelogin.config.ConfigManager;
 import me.itsnathang.picturelogin.config.FallbackPicture;
@@ -92,8 +92,6 @@ public class PictureUtil {
 	// String Utility Functions
 
 	private String addPlaceholders(String msg, Player player) {
-		msg = ChatColor.translateAlternateColorCodes('&', msg);
-
 		msg = msg.replace("%pname%", player.getName());
 		msg = msg.replace("%uuid%", player.getUniqueId().toString());
 		msg = msg.replace("%online%", String.valueOf(plugin.getServer().getOnlinePlayers().size()));
@@ -104,7 +102,7 @@ public class PictureUtil {
 		if (Hooks.PLACEHOLDER_API)
 			msg = PlaceholderAPI.setPlaceholders(player, msg);
 
-		return msg;
+		return Chat.color(msg);
 	}
 
 	public void clearChat(Player player) {
