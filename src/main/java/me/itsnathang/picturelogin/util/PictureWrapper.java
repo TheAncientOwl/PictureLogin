@@ -1,10 +1,10 @@
 package me.itsnathang.picturelogin.util;
 
-import me.itsnathang.picturelogin.util.ImageMessage;
-import me.itsnathang.picturelogin.PictureLogin;
-import me.itsnathang.picturelogin.config.ConfigManager;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import me.itsnathang.picturelogin.PictureLogin;
+import me.itsnathang.picturelogin.config.ConfigManager;
 
 public class PictureWrapper extends BukkitRunnable {
     private PictureUtil pictureUtil;
@@ -13,8 +13,8 @@ public class PictureWrapper extends BukkitRunnable {
 
     public PictureWrapper(PictureLogin plugin, Player player) {
         this.pictureUtil = plugin.getPictureUtil();
-        this.config      = plugin.getConfigManager();
-        this.player      = player;
+        this.config = plugin.getConfigManager();
+        this.player = player;
     }
 
     @Override
@@ -43,11 +43,13 @@ public class PictureWrapper extends BukkitRunnable {
 
     private void sendImage() {
         // only show message for players with picturelogin.show permission
-        if(!checkPermission()) return;
+        if (!checkPermission())
+            return;
 
         ImageMessage pictureMessage = getMessage();
 
-        if (pictureMessage == null) return;
+        if (pictureMessage == null)
+            return;
 
         // send only to the player that joined?
         if (config.getBoolean("player-only", true)) {

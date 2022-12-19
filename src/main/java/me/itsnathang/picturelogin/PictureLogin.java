@@ -1,16 +1,15 @@
 package me.itsnathang.picturelogin;
 
-import me.itsnathang.picturelogin.listeners.JoinListener;
-import me.itsnathang.picturelogin.listeners.QuitListener;
+import org.bstats.bukkit.Metrics;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import me.itsnathang.picturelogin.commands.BaseCommand;
 import me.itsnathang.picturelogin.config.ConfigManager;
+import me.itsnathang.picturelogin.listeners.JoinListener;
+import me.itsnathang.picturelogin.listeners.QuitListener;
 import me.itsnathang.picturelogin.util.Hooks;
 import me.itsnathang.picturelogin.util.PictureUtil;
-
 import me.itsnathang.picturelogin.util.Updater;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bstats.bukkit.Metrics;
 
 public class PictureLogin extends JavaPlugin {
 	private ConfigManager configManager;

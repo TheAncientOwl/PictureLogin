@@ -2,42 +2,40 @@ package me.itsnathang.picturelogin.config;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 
-import com.sun.tools.sjavac.Log;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.bobacadodl.imgmessage.ImageChar;
-import me.itsnathang.picturelogin.util.ImageMessage;
+
 import me.itsnathang.picturelogin.PictureLogin;
+import me.itsnathang.picturelogin.util.ImageMessage;
 
 public class ConfigManager {
 	private final PictureLogin plugin;
 	private LanguageManager languageManager;
 	private YamlConfiguration config;
-	
+
 	public ConfigManager(PictureLogin plugin) {
 		this.plugin = plugin;
 
 		languageManager = new LanguageManager(plugin);
-		
+
 		reloadConfig();
 	}
-	
+
 	public void reloadConfig() {
 		File conf = new File(plugin.getDataFolder() + File.separator + "config.yml");
-		
-		if(!conf.exists())
+
+		if (!conf.exists())
 			plugin.saveResource("config.yml", true);
-        
-        config = YamlConfiguration.loadConfiguration(conf);
+
+		config = YamlConfiguration.loadConfiguration(conf);
 
 		languageManager.reloadLanguage();
 	}
-	
+
 	private char getChar() {
 		try {
 			return ImageChar.valueOf(config.getString("character").toUpperCase()).getChar();
@@ -45,14 +43,15 @@ public class ConfigManager {
 			return ImageChar.BLOCK.getChar();
 		}
 	}
-	
+
 	public ImageMessage getMessage(List<String> messages, BufferedImage image) {
 		int imageDimensions = 8, count = 0;
 		ImageMessage imageMessage = new ImageMessage(image, imageDimensions, getChar());
 		String[] msg = new String[imageDimensions];
 
 		for (String message : messages) {
-			if (count > msg.length) break;
+			if (count > msg.length)
+				break;
 			msg[count++] = message;
 		}
 
@@ -70,7 +69,9 @@ public class ConfigManager {
 		return config.getBoolean(key);
 	}
 
-	public boolean getBoolean(String key, Boolean def) { return config.getBoolean(key, def); }
+	public boolean getBoolean(String key, Boolean def) {
+		return config.getBoolean(key, def);
+	}
 
 	public List<String> getStringList(String key) {
 		return config.getStringList(key);
@@ -87,5 +88,5 @@ public class ConfigManager {
 
 		return url;
 	}
-	
+
 }

@@ -1,32 +1,29 @@
 package me.itsnathang.picturelogin.listeners;
 
-import fr.xephi.authme.api.v3.AuthMeApi;
-import me.itsnathang.picturelogin.util.Hooks;
-import me.itsnathang.picturelogin.util.PictureWrapper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import fr.xephi.authme.api.v3.AuthMeApi;
 import me.itsnathang.picturelogin.PictureLogin;
 import me.itsnathang.picturelogin.config.ConfigManager;
-import me.itsnathang.picturelogin.util.PictureUtil;
-import org.bukkit.scheduler.BukkitRunnable;
+import me.itsnathang.picturelogin.util.Hooks;
+import me.itsnathang.picturelogin.util.PictureWrapper;
 
 public class JoinListener implements Listener {
 	private PictureLogin plugin;
-	private PictureUtil pictureUtil;
 	private ConfigManager config;
 	private Player player;
 
 	public JoinListener(PictureLogin plugin) {
 		this.plugin = plugin;
 		this.config = plugin.getConfigManager();
-		this.pictureUtil = plugin.getPictureUtil();
 	}
 
-	@EventHandler (priority = EventPriority.HIGH)
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onJoin(PlayerJoinEvent event) {
 		this.player = event.getPlayer();
 
