@@ -27,14 +27,14 @@
 #       PlaceholderAPI if it is installed.
 
 messages:
-    - ''
-    - '&7Welcome to &e&lGeneric Server Name&7!'
-    - ''
-    - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
-    - '&7» &aNEW: &7Feature X added!'
-    - ''
-    - '&7» &aPictureLogin &7by &aNathanG&7.'
-    - ''
+  - ''
+  - '&7Welcome to &e&lGeneric Server Name&7!'
+  - ''
+  - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
+  - '&7» &aNEW: &7Feature X added!'
+  - ''
+  - '&7» &aPictureLogin &7by &aNathanG&7.'
+  - ''
 
 #############
 # First Join Message
@@ -46,14 +46,14 @@ messages:
 show-first-join: true
 
 first-join-messages:
-    - ''
-    - '&7Welcome to &e&lGeneric Server Name&7!'
-    - ''
-    - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
-    - '&7» &aNEW: &7Feature X added!'
-    - ''
-    - '&7Please welcome &a%pname% &7to the server!'
-    - ''
+  - ''
+  - '&7Welcome to &e&lGeneric Server Name&7!'
+  - ''
+  - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
+  - '&7» &aNEW: &7Feature X added!'
+  - ''
+  - '&7Please welcome &a%pname% &7to the server!'
+  - ''
 
 #############
 # Leave Messages
@@ -66,14 +66,14 @@ first-join-messages:
 show-leave-message: false
 
 leave-messages:
-    - ''
-    - '&e%pname% &7has left the server!'
-    - ''
-    - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
-    - '&7» &aNEW: &7Feature X added!'
-    - ''
-    - '&7» &aPictureLogin &7by &aNathanG&7.'
-    - ''
+  - ''
+  - '&e%pname% &7has left the server!'
+  - ''
+  - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
+  - '&7» &aNEW: &7Feature X added!'
+  - ''
+  - '&7» &aPictureLogin &7by &aNathanG&7.'
+  - ''
 
 #############
 # Fallback
@@ -125,7 +125,7 @@ player-only: true
 
 #############
 # Image Character
-######## 
+########
 # Change this to change what
 # character the image is made of.
 ########
@@ -139,7 +139,7 @@ character: 'BLOCK'
 
 #############
 # URL
-######## 
+########
 # Where to get the picture from.
 # By default it uses crafatar.
 # You should probably leave this where it is.
@@ -148,7 +148,7 @@ character: 'BLOCK'
 # %uuid%   - Joined player's UUID
 # %pname%  - Joined player's Username
 
-url: 'https://minepic.org/avatar/8/%uuid%'
+url: 'https://mc-heads.net/avatar/%pname%/100'
 
 # CRACKED SERVERS - USE THIS URL:
 # url: 'https://minepic.org/avatar/8/%pname%'
