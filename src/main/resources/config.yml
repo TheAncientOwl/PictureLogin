@@ -33,7 +33,7 @@ messages:
   - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
   - '&7» &aNEW: &7Feature X added!'
   - ''
-  - '&7» &aPictureLogin &7by &aNathanG&7.'
+  - '&7» &aPictureLogin &7by &aNathanG & DefaultyBuf&7.'
   - ''
 
 #############
@@ -72,7 +72,7 @@ leave-messages:
   - '&7» [&e%online%&7/&e%max%&7] player(s) online.'
   - '&7» &aNEW: &7Feature X added!'
   - ''
-  - '&7» &aPictureLogin &7by &aNathanG&7.'
+  - '&7» &aPictureLogin &7by &aNathanG & DefaultyBuf&7.'
   - ''
 
 #############
@@ -147,8 +147,9 @@ character: 'BLOCK'
 # Variables:
 # %uuid%   - Joined player's UUID
 # %pname%  - Joined player's Username
+# %skins_restorer% - Joined player's SkinsRestorer skin name
 
-url: 'https://mc-heads.net/avatar/%pname%/100'
+url: 'https://mc-heads.net/avatar/%skins_restorer%/100'
 
 # CRACKED SERVERS - USE THIS URL:
 # url: 'https://minepic.org/avatar/8/%pname%'
@@ -177,10 +178,12 @@ require-permission: true
 ########
 # Set to false to not allow Picture Login
 # to hook into certain plugins.
+# when SkinsRestorer: true the plugin will use player's skins provided by SkinsRestorer
 
 hooks:
   PlaceholderAPI: true
   AuthMe: true
+  SkinsRestorer: true
 
 #############
 # Update Check

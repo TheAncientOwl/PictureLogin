@@ -16,6 +16,7 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.itsnathang.picturelogin.PictureLogin;
 import me.itsnathang.picturelogin.config.ConfigManager;
 import me.itsnathang.picturelogin.config.FallbackPicture;
+import net.skinsrestorer.api.SkinsRestorerAPI;
 
 public class PictureUtil {
 	private final PictureLogin plugin;
@@ -27,9 +28,12 @@ public class PictureUtil {
 	}
 
 	private URL newURL(String player_uuid, String player_name) {
+		String skinName = SkinsRestorerAPI.getApi().getSkinName(player_name);
+
 		String url = config.getURL()
 				.replace("%uuid%", player_uuid)
-				.replace("%pname%", player_name);
+				.replace("%pname%", player_name)
+				.replace("%skins_restorer%", skinName == null ? player_name : skinName);
 
 		try {
 			return new URL(url);

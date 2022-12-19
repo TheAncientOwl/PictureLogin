@@ -6,24 +6,26 @@ import org.bukkit.plugin.PluginManager;
 import java.util.logging.Logger;
 
 public class Hooks {
-    private PluginManager plugins;
+    private PluginManager pluginManager;
     private ConfigManager config;
     private Logger logger;
 
     public static boolean AUTHME;
     public static boolean PLACEHOLDER_API;
+    private static boolean SKINS_RESTORER;
 
     public Hooks(PluginManager plugins, ConfigManager config, Logger logger) {
-        this.plugins = plugins;
+        this.pluginManager = plugins;
         this.config = config;
         this.logger = logger;
 
         hookAuthMe();
         hookPlaceHolderAPI();
+        hookSkinsRestorer();
     }
 
     private boolean hookPlugin(String plugin) {
-        if (!plugins.isPluginEnabled(plugin))
+        if (!pluginManager.isPluginEnabled(plugin))
             return false;
 
         // Make sure user wants to hook into the plugin
@@ -40,5 +42,13 @@ public class Hooks {
 
     private void hookPlaceHolderAPI() {
         PLACEHOLDER_API = hookPlugin("PlaceholderAPI");
+    }
+
+    private void hookSkinsRestorer() {
+        SKINS_RESTORER = hookPlugin("SkinsRestorer");
+    }
+
+    public static boolean useSkinsRestorer() {
+        return SKINS_RESTORER;
     }
 }

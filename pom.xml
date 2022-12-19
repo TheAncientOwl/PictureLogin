@@ -6,13 +6,14 @@
 
     <groupId>me.itsnathang</groupId>
     <artifactId>PictureLogin</artifactId>
-    <version>1.6.1</version>
+    <version>1.7</version>
     <packaging>jar</packaging>
 
     <name>Picture Login</name>
 
     <properties>
         <author>NathanG</author>
+        <author>DefaultyBuf</author>
         <mainClass>me.itsnathang.picturelogin.PictureLogin</mainClass>
     </properties>
 
@@ -32,6 +33,10 @@
         <repository>
             <id>minedown-repo</id>
             <url>https://repo.minebench.de/</url>
+        </repository>
+        <repository>
+            <id>codemc-releases</id>
+            <url>https://repo.codemc.org/repository/maven-releases/</url>
         </repository>
     </repositories>
 
@@ -65,6 +70,12 @@
             <artifactId>minedown</artifactId>
             <version>1.6.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.skinsrestorer</groupId>
+            <artifactId>skinsrestorer-api</artifactId>
+            <version>14.2.3</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
